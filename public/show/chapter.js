@@ -22,6 +22,7 @@ const displayChapterDetails = (chapter) => {
     chapterDetailsContainer.innerHTML = `
         <h2 class="text-2xl font-bold mb-4">${chapter.title}</h2>
         <p class="text-gray-700 mb-4">${chapter.nbLessons} leçons</p>
+          <p>${chapter.active ? 'Disponible' : 'Non disponible'}</p>
         <div class="flex gap-4">
             <button id="deleteButton" class="btn btn-danger">Supprimer</button>
         </div>

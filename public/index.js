@@ -1,7 +1,8 @@
-import {API_URL} from './javascripts/api.js';
+import { API_URL } from './javascripts/api.js';
 
 const chaptersContainer = document.getElementById('chapters');
 const searchInput = document.getElementById('searchInput');
+const filterActive = document.getElementById('filterActive');
 
 export const fetchChapters = async () => {
     const response = await fetch(`${API_URL}/chapters`);
@@ -18,6 +19,7 @@ const createChaptersDOM = (chapters) => {
         chapterNode.innerHTML = `
             <h2>${chapter.title}</h2>
             <p>${chapter.nbLessons} leçons</p>
+            <p>${chapter.active ? 'Disponible' : 'Non disponible'}</p>
             <button class="btn btn-primary" data-id="${chapter._id}">Voir</button>
             <button class="btn btn-danger" data-id="${chapter._id}">Supprimer</button>
         `;
@@ -52,9 +54,30 @@ const createChaptersDOM = (chapters) => {
 
 searchInput.addEventListener('input', async (event) => {
     const query = event.target.value;
+    const isActive = filterActive.checked;
     const response = await fetch(`${API_URL}/chapters/search?title=${query}`);
     const json = await response.json();
-    createChaptersDOM(json.data);
+    let chapters = json.data;
+
+    if (isActive) {
+        chapters = chapters.filter(chapter => chapter.active);
+    }
+
+    createChaptersDOM(chapters);
+});
+
+filterActive.addEventListener('change', async () => {
+    const query = searchInput.value;
+    const isActive = filterActive.checked;
+    const response = await fetch(`${API_URL}/chapters/search?title=${query}`);
+    const json = await response.json();
+    let chapters = json.data;
+
+    if (isActive) {
+        chapters = chapters.filter(chapter => chapter.active);
+    }
+
+    createChaptersDOM(chapters);
 });
 
 fetchChapters();
