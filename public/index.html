@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Chapter Management</title>
+    <title>Gestion des Chapitres</title>
     <script type="module" src="index.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -16,7 +16,7 @@
 
 <main class="p-4 flex flex-col items-center">
     <section class="w-full max-w-2xl">
-        <h2 class="text-2xl font-bold mb-4">Chapter Form</h2>
+        <h2 class="text-2xl font-bold mb-4">Formulaire de création d'un chapitre</h2>
         <form id="chapterForm" class="bg-white p-6 rounded shadow-md mb-4">
             <div class="mb-4">
                 <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
@@ -24,10 +24,10 @@
             </div>
             <div class="mb-4">
                 <label for="nbLessons" class="block text-sm font-medium text-gray-700">Nombre de leçons</label>
-                <input type="number" name="nbLessons" id="nbLessons" placeholder="Number of Lessons" class="input-field">
+                <input type="number" name="nbLessons" id="nbLessons" placeholder="12" class="input-field">
             </div>
             <div class="mb-4 flex items-center">
-                <label for="active" class="mr-2 block text-sm font-medium text-gray-700">Chapter active?</label>
+                <label for="active" class="mr-2 block text-sm font-medium text-gray-700">Chapitre actif?</label>
                 <input type="checkbox" name="active" id="active" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
             </div>
             <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">Envoyer</button>
@@ -38,11 +38,11 @@
     <section class="w-3/4 bg-white p-6 rounded shadow-md">
         <div class="mb-4 flex justify-center items-center">
             <input type="text" id="searchInput" placeholder="Rechercher par titre" class="search-input">
-            <label for="filterActive" class="ml-2 text-sm font-medium text-gray-700">Disponible uniquement</label>
+            <label for="filterActive" class="ml-2 text-sm font-medium text-gray-700">Actif uniquement</label>
             <input type="checkbox" id="filterActive" class="ml-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
         </div>
         <div>
-            <h3 class="text-2xl font-bold mb-4">All Chapters</h3>
+            <h3 class="text-2xl font-bold mb-4">Tous les Chapitres</h3>
             <div id="chapters" class="flex flex-wrap gap-4"></div>
         </div>
     </section>

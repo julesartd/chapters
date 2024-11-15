@@ -19,7 +19,7 @@ const createChaptersDOM = (chapters) => {
         chapterNode.innerHTML = `
             <h2>${chapter.title}</h2>
             <p>${chapter.nbLessons} leçons</p>
-            <p>${chapter.active ? 'Disponible' : 'Non disponible'}</p>
+            <p>${chapter.active ? 'Actif' : 'Inactif'}</p>
             <button class="btn btn-primary" data-id="${chapter._id}">Voir</button>
             <button class="btn btn-danger" data-id="${chapter._id}">Supprimer</button>
         `;
