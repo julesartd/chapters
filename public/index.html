@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Chapter Management</title>
+    <script type="module" src="index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<header class="bg-blue-600 text-white p-4">
+    <h1 class="text-2xl font-bold">Examen intégration externe</h1>
+</header>
+
+<main class="p-4 flex flex-col items-center">
+    <section class="w-full max-w-2xl">
+        <h2 class="text-2xl font-bold mb-4">Chapter Form</h2>
+        <form id="chapterForm" class="bg-white p-6 rounded shadow-md mb-4">
+            <div class="mb-4">
+                <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
+                <input type="text" name="title" id="title" placeholder="Titre" class="input-field">
+            </div>
+            <div class="mb-4">
+                <label for="nbLessons" class="block text-sm font-medium text-gray-700">Nombre de leçons</label>
+                <input type="number" name="nbLessons" id="nbLessons" placeholder="Number of Lessons" class="input-field">
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">Envoyer</button>
+        </form>
+        <div id="errors" class="text-red-600 mb-4"></div>
+    </section>
+
+    <section class="w-3/4 bg-white p-6 rounded shadow-md">
+        <div class="mb-4 flex justify-center">
+            <input type="text" id="searchInput" placeholder="Rechercher par titre" class="search-input">
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold mb-4">All Chapters</h3>
+            <div id="chapters" class="flex flex-wrap gap-4"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-800 text-white p-4 text-center">
+    <p>&copy; 2024 Jules ARTAUD</p>
+</footer>
+
+<script type="module" src="javascripts/form.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+module.exports.MONGO_URI = "mongodb+srv://julesartaud:s57sbPyDiRsseFjH@cluster0.kad13.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
