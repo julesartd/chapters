@@ -47,7 +47,7 @@ const createChaptersDOM = (chapters) => {
     showButtons.forEach(button => {
         button.addEventListener('click', e => {
             const id = e.target.dataset.id;
-            location.assign(`/chapter/public/show/chapter.html?id=${id}`);
+            location.assign(`show/chapter.html?id=${id}`);
         });
     });
 }
